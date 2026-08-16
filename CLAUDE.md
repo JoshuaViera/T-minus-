@@ -70,7 +70,7 @@ Build one slice at a time. Each slice must run in the browser and be visibly wor
 4. **Starter checklist.** Seeded items in the three categories. Check and uncheck. Checked state persists.
 5. **Add and delete.** Custom item into any category. Delete any item, seeded or custom.
 6. **Unpacked count and zero state.** Count of remaining items. A clear "you're off" state when the countdown hits zero.
-7. **Edit date.** Change the departure date after setup without losing the checklist.
+7. **Edit trip.** Change the trip name or departure date after setup without losing the checklist.
 8. **Deploy.** Push to GitHub, deploy the static build.
 
 Slices 1 through 7 cover every MVP requirement in the PRD. Nothing else is MVP.
@@ -104,3 +104,4 @@ These came up while planning. Don't re-litigate them.
 - **Deleting:** no confirmation, no undo. Reject empty or whitespace-only labels. Duplicate labels are allowed.
 - **Starting over:** "clear the list and start a new trip" is not MVP. Do not add a reset button.
 - **Deploy target:** Vercel. No Vite `base` config needed.
+- **Past dates at setup:** the setup form rejects a departure datetime that is already in the past and shows an inline error. This narrows the "Past dates" rule above: the "you're off" state is reachable when a date passes while the app is in use, or after an edit — never straight out of first-run setup.
